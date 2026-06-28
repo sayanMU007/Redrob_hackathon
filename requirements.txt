@@ -1,0 +1,8 @@
+# Redrob Ranker — Dependencies
+# No ML libraries required — the ranker is rule-based and deterministic.
+# Python standard library only (json, csv, math, argparse, datetime, pathlib).
+#
+# The only potential add-on is python-docx if you want to re-read the source
+# docx files, but it is NOT needed to run rank.py.
+#
+# python >= 3.9 required (for tuple type hints)

@@ -1,0 +1,56 @@
+team_name: "Team SayanMukherjee"
+
+primary_contact:
+  name: "Sayan Mukherjee"
+  email: "mukherjeesayan731@gmail.com"
+  phone: "+91-6295826797"
+
+team_members:
+  - name: "Sayan Mukherjee"
+    email: "mukherjeesayan731@gmail.com"
+    role: "Team Lead / ML Engineer"
+
+github_repo: "https://github.com/YOUR_USERNAME/redrob-ranker"
+
+sandbox_link: "https://huggingface.co/spaces/YOUR_USERNAME/redrob-ranker"
+
+reproduce_command: "python rank.py --candidates ./candidates.jsonl --out ./submission.csv"
+
+compute:
+  platform: "Ubuntu 24 / CPU"
+  cpu_cores: 4
+  ram_gb: 8
+  python_version: "3.12"
+  os: "Ubuntu 24.04 LTS"
+  uses_gpu_for_inference: false
+  has_network_during_ranking: false
+  pre_computation_required: false
+  pre_computation_time_minutes: 0
+
+ai_tools_used:
+  - "Claude"
+
+ai_usage_summary: |
+  Used Claude to assist with architecture design, code structuring, and review.
+  No candidate data was fed to any LLM during the ranking step.
+  All ranking is deterministic, rule-based, and runs fully offline.
+
+methodology_summary: |
+  Multi-signal hybrid scoring with behavioral multiplier.
+  Five components: title alignment (35%), skills trust score (25%),
+  career quality (20%), experience calibration (10%), location/logistics (10%).
+  Title is the decisive signal — explicitly prevents keyword-stuffed wrong-domain
+  candidates from ranking high. Skills use a trust score combining proficiency,
+  usage duration, endorsements, and Redrob assessment results, catching lazy
+  keyword listing. Career quality penalizes all-services backgrounds (TCS, Infosys
+  etc.) per JD specification. Behavioral signals are a multiplicative modifier
+  (0.3-1.2x) so unavailable/unresponsive candidates are down-weighted regardless
+  of profile quality. Honeypot detection uses impossible timeline checks and
+  expert-with-zero-duration pattern matching. Runtime: ~50s on CPU, no network.
+
+declarations:
+  read_submission_spec: true
+  code_is_original_work: true
+  no_collusion: true
+  honeypot_check_done: true
+  reproduction_tested: true
