@@ -12,7 +12,7 @@ team_members:
 
 github_repo: "https://github.com/sayanMU007/Redrob_hackathon"
 
-sandbox_link: "https://huggingface.co/spaces/YOUR_USERNAME/redrob-ranker"
+sandbox_link: "https://redrobhackathon-bykig4vdhcp6ixv4kdfm8p.streamlit.app"
 
 reproduce_command: "python rank.py --candidates ./candidates.jsonl --out ./submission.csv"
 
